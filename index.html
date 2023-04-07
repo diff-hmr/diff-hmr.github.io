@@ -1,0 +1,493 @@
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+ 
+    .box{
+        width:1020px;
+        margin:0 auto;
+        position:relative;
+    }
+    .box .left{
+        width:340px;
+        /* height:300px; */
+        /* background-color:#eee; */
+        position:absolute;
+       
+    }
+    .box .center{
+        width:340px;
+        /* height:300px; */
+        /* background-color:#eee; */
+        margin:0 auto;
+    }
+    .box .right{
+        width:340px;
+        /* height:300px; */
+        /* background-color:#eee; */
+        position:absolute;
+        right:0;
+        top:0;
+ 
+    }
+
+    h1 {
+        font-weight:300;
+        margin: 0.4em;
+    }
+
+    p {
+        margin: 0.2em;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    /* 图片的重叠 */
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+    <head>
+        <title>Diff-HMR</title>
+    </head>
+    
+
+    <body>
+	    
+        <br>
+        <center>
+            <span style="font-size:42px">Diff-HMR: Toward more reliable human pose and shape estimation from video</span>
+        </center>
+        <br>
+	    
+	<br> <!-- 换行-->
+   
+        <!-- framework -->
+        <table align=center width=900px>
+            	<tr>
+	        	<td>
+                    		<center>                      
+		        		<img src = "./framework_update.png" width="1080px"></img>
+                        		<span style="font-size:15px;font-style:italic">    Overview of our motion pose and shape network (MPS-Net). MPS-Net estimates pose, shape, and camera parameters Θ in the video sequence based on the static feature extractor, temporal encoder, temporal feature integration, and SMPL parameter regressor to generate 3D human pose and shape.</span>
+                    		</center>
+                	</td> 
+	    	</tr>
+        </table>
+        <!-- abstract-->
+    	<table align=center width=900px></table>
+            <tr>
+                <td width=600px>
+                    <br>
+                    <p align="justify" style="font-size: 18px">
+                        The accurate recovery of 3D human shape and pose from monocular videos is crucial for understanding human behavior in various media. However, current methods have yet to address the uncertainties associated with 3D estimation, such as inherent ambiguity, blurring, and occlusion, resulting in inaccurate estimates, particularly in complex scenarios.  To overcome this challenge, we propose a novel Diffusion-based Human Mesh Recovery (Diff-HMR) network, inspired by the powerful capabilities of the diffusion model in generation tasks. Specifically, our approach incorporates a Diffusion-based pose regressor (DPR) that models the estimation of a deterministic pose as a reverse diffusion process, while a Cross-Temporal Attention Module (CTAM) aggregates contextual features as a condition for the reverse diffusion process. The ground truth pose parameters are used to supervise process values through a stepwise diffusion. Additionally, we introduce a vertex constraint loss to provide more precise constraints on the final output of the human mesh. Experimental results demonstrate that our proposed Diff-HMR outperforms state-of-the-art methods on two benchmark datasets, 3DPW and Human3.6M, and provides better handling of uncertainty in human pose and shape estimation.    
+                    </td>
+	    </tr>
+	
+    </br>
+    </div> 
+    </br>
+    <hr>   
+    <center><h1>Visual comparison of Diff-HMR with other sota methods </h1></center>
+    
+    <!-- demo comparison-->
+    <div class="box">
+        <div class="left">
+            <video id="video2" width="320" style= "margin-top:10px; margin-right:20px;">
+                <source src="mps_han_short_output.mp4" type="video/mp4" />
+            </video>                
+        </div>
+        <div class="center">
+            <video id="video1" width="320" style= "margin-top:10px;">
+                <source src="DIFF_han_short_output.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="right">
+            <video id="video3" width="320" style= "margin-top:10px; margin-right:20px;">
+                <source src="tcmr_han_short_output.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div> 
+    <center><button onclick= "play_Pause();" style= "margin-top:10px;">play/pause</button></center>
+
+    <script type="text/javascript">
+    var myVideo=document.getElementById ("video1");
+    var myVideo2=document.getElementById ("video2");
+    var myVideo3=document.getElementById ("video3");
+    function play_Pause() {
+        if (myVideo.paused){
+            myVideo.play();
+            myVideo2.play();
+            myVideo3.play();
+        }
+        else{
+            myVideo.pause();
+            myVideo2.pause();
+            myVideo3.pause();
+        }
+    }
+    </script>
+    
+    </br>
+    <!-- 3DPW comparison-->
+    <div class="box">
+        <div class="left">
+            <video id="video_l" width="320" style= "margin-top:10px; margin-right:20px;">
+                <source src="mps_slalom_output.mp4" type="video/mp4" />
+            </video>                
+        </div>
+        <div class="center">
+            <video id="video_c" width="320" style= "margin-top:10px;">
+                <source src="diff_slalom_output.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="right">
+            <video id="video_r" width="320" style= "margin-top:10px; margin-right:20px;">
+                <source src="tcmr_slalom_output.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div> 
+    <center><button onclick= "play_Pause_2();" style= "margin-top:10px;">play/pause</button></center>
+
+    <script type="text/javascript">
+    var myVideo_l=document.getElementById ("video_l");
+    var myVideo_c=document.getElementById ("video_c");
+    var myVideo_r=document.getElementById ("video_r");
+    function play_Pause_2() {
+        if (myVideo_c.paused){
+            myVideo_l.play();
+            myVideo_c.play();
+            myVideo_r.play();
+        }
+        else{
+            myVideo_l.pause();
+            myVideo_c.pause();
+            myVideo_r.pause();
+        }
+    }
+    </script>
+
+    </br>
+    <!-- Description-->    
+    </tr>
+        <center>
+	    <span style="font-size:14px">   Left: The video shows the 3D human pose and shape estimation results of our MPS-Net from different viewpoints. Top-Right: Visual results of the continuity of human motion learned by MPS-Net (MPS-Net produces a transition effect between pose exchanges). Bottom-Right: Visualization of a standing still person by MPS-Net. When the input video content is a person standing still, MPS-Net does not force the subject to be in motion. </span>
+ 	</center>
+</br>
+    <hr> 
+        <table align=center width=900px>
+            <center><h1>Visual effects of MPS-Net in alternative viewpoints</h1></center>
+            <tr>
+                    <center>
+                        <a href="./visual2.png"><img src = "./visual2.png" width="900px"></img></a><br>
+                    </center><br>
+		    <center>
+                        <a href="./visual3.png"><img src = "./visual3.png" width="900px"></img></a><br>
+                    </center><br>
+		    <center>
+                        <!-- <a href="./LSPchoice360.gif"><img src = "./LSPchoice360.gif" width="900px"></img></a><br>
+		        <span style="font-size:14px">   <b>We visualize the 3D human body estimated by our MPS-Net from different viewpoints.</b> The results show that our MPS-Net is able to estimate the correct global body rotation. </span>
+                    </center> -->
+            </tr>
+        </table>   
+	<br>
+        <hr>
+        <center><h1>Qualitative Results</h1></center>
+             <tr>
+                 <th colspan='4'>
+                   <center>
+                     <span style="font-size:22px">Visual comparison between Diff-HMR, MPS-Net and TCMR</span>
+                   </center>
+                 </th>
+             </tr>
+        <br>
+        <table align=center width=900px>
+        	<tr>
+			<center>
+				<a href="./compare_1.png"><img src = "./compare_1.png" width="900px"></img></a><br>
+                                <!--<span style="font-size:14px">
+                     			Qualitative comparison of TCMR [6] (left) and our MPS-Net (right) on the challenging in-the-wild 3DPW [37] and MPI-INF-3DHP [27] datasets.
+                    		</span>-->
+                    	</center><br>
+		</tr>              
+	
+	</table>
+        <br>
+        <hr>
+        <center><h1> Quantitative Results</h1></center> 
+	<br>
+        <table align=center width=900px>
+            <tr>
+                <td>
+               <center>
+                    <span style="font-size:18px">
+                        <!--<b>Evaluation of state-of-the-art video-based methods on <a href='http://virtualhumans.mpi-inf.mpg.de/3DPW/'>3DPW</a>, <a href='http://vcai.mpi-inf.mpg.de/3dhp-dataset/'>MPI-INF-3DHP</a>, and <a href='http://vision.imar.ro/human3.6m/description.php'>Human3.6M</a> datasets.</b> Following Choi et al. [6], all methods are trained on the training set including 3DPW, but do not use the Human3.6M SMPL parameters obtained from <a href='https://files.is.tue.mpg.de/black/papers/MoSh.pdf'>Mosh</a>. The number of input frames follows the original protocol of each method.-->
+                        <b>Table 1. Evaluation of state-of-the-art methods on 3DPW [37] and Human3.6M [16] datasets.</b> 
+			<!--<b>Chest X-ray Lung Segmentation</b> Numbers are DICE scores. 
+                        <a href='http://db.jsrt.or.jp/eng.php'>JSRT</a> is the in-domain dataset, 
+                        on which we both train and evaluate. We also evaluate on additional out-of-domain datasets 
+                        (<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/'>NLM</a>, 
+                        <a href='https://arxiv.org/abs/1803.01199'>NIH</a>, 
+                        <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/'>SZ</a>). 
+                        Ours as well as the other semi-supervised methods use additional 108k unlabeled data samples.-->
+                    </span>
+                </center>
+                </td>                
+            </tr>
+            <tr>
+                <td width=100px>
+                    <center>
+                        <a href="./result_1.png"><img src = "./result_1.png" width="1000px"></img></a><br>
+                    </center>
+                </td>
+	    </tr>                
+        </table>
+        <br>
+        <table align=center width=900px>
+            <tr>
+                <td>
+		  <center>
+                    <span style="font-size:18px">
+                        <!--<b>Comparison of the number of network parameters</b>-->
+			<b>Table 2. Comparison of the number of network parameters, FLOPs, and model size.</b>
+                    </span>
+		  </center>
+                </td>                
+            </tr>
+            <tr>
+                <td width=300px>
+                    <center>
+                        <a href="./result_2.png"><img src = "./result_2.png" width="500px"></img></a><br>
+                    </center>
+                </td>
+	    </tr>                
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table align=center width=900px>
+            <tr>
+                <td>
+                <center>
+                    <span style="font-size:18px">
+                        <!--<b>Ablation study for different modules of the proposed MPS-Net on the 3DPW [37] dataset.</b> The training and evaluation settings are the same as he above table.-->
+                        <b>Table 3. Ablation study on the impact of DPR on the 3DPW [37] dataset.</b>
+                        <!--<b>CT-MRI Transfer Liver Segmentation</b> Numbers are DICE per patient. CT
+                        is the in-domain data set on which we both train and evaluate. We also evaluate on additional unseen 
+                        MRI T1-in and MRI T1-out from
+                        <a href='https://chaos.grand-challenge.org/'>CHAOS</a> dataset. 
+                        Ours as well as the semi-supervised methods use additional 70 CT volumes from the 
+                        <a href='https://competitions.codalab.org/competitions/17094'>LITS2017</a> testing set as unlabeled data samples for training.-->
+                    </span>
+                </center>
+                </td>                
+            </tr>
+            <tr>
+                <td width=100px>
+                    <center>
+                        <a href="./result_3.png"><img src = "./result_3.png" width="600px"></img></a><br>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table align=center width=900px>
+            <tr>
+                <td>
+                    <center>
+                    <span style="font-size:18px">
+                        <!--<b>Evaluation of state-of-the-art single image-based and video-based methods on 3DPW [37] dataset.</b> All methods do not use 3DPW in training.-->
+			<b>Table 5. Ablation study on the impact of attention module on the performance on the 3DPW [37] dataset.</b>
+                    </span>
+                </center>
+                </td>                
+            </tr>
+            <tr>
+                <td width=100px>
+                    <center>
+                        <a href="./result_4.png"><img src = "./result_4.png" width="600px"></img></a><br>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <hr>
+        <table align=center width=900px>
+            <tr>
+                <td>
+                    <center>
+                    <span style="font-size:18px">
+                        <!--<b>Evaluation of state-of-the-art single image-based and video-based methods on 3DPW [37] dataset.</b> All methods do not use 3DPW in training.-->
+			<b>Table 6. Ablation study on the impact of the loss on the performance on the 3DPW [37] dataset.</b> 
+                    </span>
+                </center>
+                </td>                
+            </tr>
+            <tr>
+                <td width=100px>
+                    <center>
+                        <a href="./result_5.png"><img src = "./result_5.png" width="600px"></img></a><br>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <hr>
+ 	<a name="related_work"></a>
+ 	<table align=center width=1100px>
+ 	    <tr>
+		<td width=400px>
+ 			<left>
+  		  	<center><h1>References</h1></center>
+ 		 	<br> [6] Hongsuk Choi, Gyeongsik Moon, Ju Yong Chang, and Kyoung Mu Lee. <b>Beyond static features for temporally consistent 3D human pose and shape from a video</b>. CVPR, 2021.</br> 
+			<br> [8] Carl Doersch and Andrew Zisserman. <b>Sim2real transfer learning for 3D human pose estimation: Motion to the rescue</b>. NeurIPS, 2019.</br>
+			<br> [16] Catalin Ionescu, Dragos Papava, Vlad Olaru, and Cristian Sminchisescu. <b>Human3.6M: Large scale datasets and predictive methods for 3D human sensing in natural environments</b>. IEEE TPAMI, 36(7):1325–1339, 2014.</br>
+			<br> [17] Angjoo Kanazawa, Michael J. Black, David W. Jacobs, and Jitendra Malik. <b>End-to-end recovery of human shape and pose</b>. CVPR, 2018.</br>
+			<br> [18] Angjoo Kanazawa, Jason Y. Zhang, Panna Felsen, and Jitendra Malik. <b>Learning 3D human dynamics from video</b>. CVPR, 2019.</br>
+			<br> [20] Muhammed Kocabas, Nikos Athanasiou, and Michael J. Black. <b>VIBE: Video inference for human body pose and shape estimation</b>. CVPR, 2020.</br>
+			<br> [21] Nikos Kolotouros, G. Pavlakos, Michael J. Black, and Kostas Daniilidis. <b>Learning to reconstruct 3D human pose and shape via model-fitting in the loop</b>. ICCV, 2019.</br>
+			<br> [22] Nikos Kolotouros, G. Pavlakos, and Kostas Daniilidis. <b>Convolutional mesh regression for single-image human shape reconstruction</b>. CVPR, 2019.</br>
+			<br> [23] Matthew Loper, Naureen Mahmood, and Michael J. Black. <b>MoSh: Motion and shape capture from sparse markers</b>. ACM ToG, 33(6):220:1–220:13, 2014.</br>
+			<br> [25] Zhengyi Luo, S. Alireza Golestaneh, and Kris M. Kitani. <b>3D human motion estimation via motion compression and refinement</b>. ACCV, 2020.</br>
+			<br> [27] Dushyant Mehta, Helge Rhodin, Dan Casas, Pascal Fua, Oleksandr Sotnychenko, Weipeng Xu, and Christian Theobalt. <b>Monocular 3D human pose estimation in the wild using improved CNN supervision</b>. 3DV, 2017.</br>
+			<br> [28] Gyeongsik Moon and Kyoung Mu Lee. <b>I2L-MeshNet: Image-to-lixel prediction network for accurate 3D human pose and mesh estimation from a single RGB image</b>. ECCV, 2020.</br>
+			<br> [34] Yu Sun, Yun Ye, Wu Liu, Wenpeng Gao, Yili Fu, and Tao Mei. <b>Human mesh recovery from monocular images via a skeleton-disentangled representation</b>. ICCV, 2019.</br>
+			<br> [37] Timo von Marcard, Roberto Henschel, Michael J. Black, Bodo Rosenhahn, and Gerard Pons-Moll. <b>Recovering accurate 3D human pose in the wild using IMUs and a moving camera</b>. ECCV, 2018.</br>
+			<br> [38] Xiaolong Wang, Ross B. Girshick, Abhinav Gupta, and Kaiming He. <b>Non-local neural networks</b>. CVPR, 2018.</br>
+			<br> [41] Hongwen Zhang, Yating Tian, Xinchi Zhou, Wanli Ouyang, Yebin Liu, Limin Wang, and Zhenan Sun. <b>PyMAF: 3D human pose and shape regression with pyramidal mesh alignment feedback loop</b>. ICCV, 2021.</br>
+		</td>
+	    </tr>
+	</table>
+	<br>
+        <br>
+        <hr>
+        <!--<a name="related_work"></a>-->
+ 	<table align=center width=1100px>
+ 	    <tr>
+		<td width=400px>
+ 			<!--<left>-->
+  		  	<center>
+				<h1>Contact Information</h1>
+				Wen-Li Wei, Jen-Chun Lin {lilijinjin@gmail.com; jenchunlin@gmail.com}
+			</center>
+		</td>
+	    </tr>
+	</table>
+	<br>
+        <br>
+        <hr>
+	<table align=center width=1100px>
+ 	    <tr>
+		<td width=400px>
+ 			<!--<left>-->
+  		  	<center>
+				<h1>Acknowledgements</h1>
+				This webpage template was refered from Phillip Isola and Richard Zhang. Thanks a lot.
+			</center>
+		</td>
+	    </tr>
+	</table>
+    </body>
+</html>
