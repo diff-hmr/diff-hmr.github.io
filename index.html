@@ -227,6 +227,13 @@
     </script>
     
     </br>
+    <center>
+    <span style="font-size:14px">  Given a challenging video which contains fast motion, self occlusion and blurring, Diff-HMR(middle) predicts more accurate result
+        than TCMR [4] (right) and MPS-Net [40] (left). In addition, it provides more accurate prediction of the people’s orientation.
+     </span>
+    </center>
+    
+    </br>
     <!-- 3DPW comparison-->
     <div class="box">
         <div class="left">
@@ -269,12 +276,15 @@
     <!-- Description-->    
     </tr>
         <center>
-	    <span style="font-size:14px">   Left: The video shows the 3D human pose and shape estimation results of our MPS-Net from different viewpoints. Top-Right: Visual results of the continuity of human motion learned by MPS-Net (MPS-Net produces a transition effect between pose exchanges). Bottom-Right: Visualization of a standing still person by MPS-Net. When the input video content is a person standing still, MPS-Net does not force the subject to be in motion. </span>
+	    <span style="font-size:14px">   
+            Qualitative comparison between Diff-HMR(middle), MPS-Net[40](left) and TCMR[4](right) on the challenging in-the-wild dataset 3DPW[38]. This video contains occlusionand fast motion. Diff-HMR produces better results
+            than the other two.    
+        </span>
  	</center>
 </br>
     <hr> 
         <table align=center width=900px>
-            <center><h1>Visual effects of MPS-Net in alternative viewpoints</h1></center>
+            <center><h1>Visual effects of Diff-HMR in alternative viewpoints</h1></center>
             <tr>
                     <center>
                         <a href="./visual2.png"><img src = "./visual2.png" width="900px"></img></a><br>
@@ -294,7 +304,7 @@
              <tr>
                  <th colspan='4'>
                    <center>
-                     <span style="font-size:22px">Visual comparison between Diff-HMR, MPS-Net and TCMR</span>
+                     <span style="font-size:22px">Details of visual comparison between Diff-HMR (middle), MPS-Net (top) and TCMR (bottom)</span>
                    </center>
                  </th>
              </tr>
@@ -441,53 +451,45 @@
 		<td width=400px>
  			<left>
   		  	<center><h1>References</h1></center>
- 		 	<br> [6] Hongsuk Choi, Gyeongsik Moon, Ju Yong Chang, and Kyoung Mu Lee. <b>Beyond static features for temporally consistent 3D human pose and shape from a video</b>. CVPR, 2021.</br> 
-			<br> [8] Carl Doersch and Andrew Zisserman. <b>Sim2real transfer learning for 3D human pose estimation: Motion to the rescue</b>. NeurIPS, 2019.</br>
-			<br> [16] Catalin Ionescu, Dragos Papava, Vlad Olaru, and Cristian Sminchisescu. <b>Human3.6M: Large scale datasets and predictive methods for 3D human sensing in natural environments</b>. IEEE TPAMI, 36(7):1325–1339, 2014.</br>
-			<br> [17] Angjoo Kanazawa, Michael J. Black, David W. Jacobs, and Jitendra Malik. <b>End-to-end recovery of human shape and pose</b>. CVPR, 2018.</br>
-			<br> [18] Angjoo Kanazawa, Jason Y. Zhang, Panna Felsen, and Jitendra Malik. <b>Learning 3D human dynamics from video</b>. CVPR, 2019.</br>
-			<br> [20] Muhammed Kocabas, Nikos Athanasiou, and Michael J. Black. <b>VIBE: Video inference for human body pose and shape estimation</b>. CVPR, 2020.</br>
-			<br> [21] Nikos Kolotouros, G. Pavlakos, Michael J. Black, and Kostas Daniilidis. <b>Learning to reconstruct 3D human pose and shape via model-fitting in the loop</b>. ICCV, 2019.</br>
-			<br> [22] Nikos Kolotouros, G. Pavlakos, and Kostas Daniilidis. <b>Convolutional mesh regression for single-image human shape reconstruction</b>. CVPR, 2019.</br>
-			<br> [23] Matthew Loper, Naureen Mahmood, and Michael J. Black. <b>MoSh: Motion and shape capture from sparse markers</b>. ACM ToG, 33(6):220:1–220:13, 2014.</br>
-			<br> [25] Zhengyi Luo, S. Alireza Golestaneh, and Kris M. Kitani. <b>3D human motion estimation via motion compression and refinement</b>. ACCV, 2020.</br>
-			<br> [27] Dushyant Mehta, Helge Rhodin, Dan Casas, Pascal Fua, Oleksandr Sotnychenko, Weipeng Xu, and Christian Theobalt. <b>Monocular 3D human pose estimation in the wild using improved CNN supervision</b>. 3DV, 2017.</br>
-			<br> [28] Gyeongsik Moon and Kyoung Mu Lee. <b>I2L-MeshNet: Image-to-lixel prediction network for accurate 3D human pose and mesh estimation from a single RGB image</b>. ECCV, 2020.</br>
-			<br> [34] Yu Sun, Yun Ye, Wu Liu, Wenpeng Gao, Yili Fu, and Tao Mei. <b>Human mesh recovery from monocular images via a skeleton-disentangled representation</b>. ICCV, 2019.</br>
-			<br> [37] Timo von Marcard, Roberto Henschel, Michael J. Black, Bodo Rosenhahn, and Gerard Pons-Moll. <b>Recovering accurate 3D human pose in the wild using IMUs and a moving camera</b>. ECCV, 2018.</br>
-			<br> [38] Xiaolong Wang, Ross B. Girshick, Abhinav Gupta, and Kaiming He. <b>Non-local neural networks</b>. CVPR, 2018.</br>
-			<br> [41] Hongwen Zhang, Yating Tian, Xinchi Zhou, Wanli Ouyang, Yebin Liu, Limin Wang, and Zhenan Sun. <b>PyMAF: 3D human pose and shape regression with pyramidal mesh alignment feedback loop</b>. ICCV, 2021.</br>
+ 		 	<br> [4] Hongsuk Choi, Gyeongsik Moon, Ju Yong Chang, and Kyoung Mu Lee. 2021. <b>Beyond static features for temporally consistent 3d human pose and shape from a video.</b> In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 1964–1973.</br> 
+            <br> [15] Angjoo Kanazawa, Michael J Black, David W Jacobs, and Jitendra Malik. 2018. <b> End-to-end recovery of human shape and pose.</b> In Proceedings of the IEEE conference on computer vision and pattern recognition. 7122–7131.</br>
+            <br> [11] Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. <b>Denoising diffusion probabilistic models.</b> Advances in Neural Information Processing Systems 33 (2020), 6840–6851. </br>
+            <br> [16] Angjoo Kanazawa, Jason Y Zhang, Panna Felsen, and Jitendra Malik. 2019. <b>Learning 3d human dynamics from video.</b> In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 5614–5623.</br> 
+            <br> [21] Nikos Kolotouros, Georgios Pavlakos, Michael J Black, and Kostas Daniilidis. 2019. <b>Learning to reconstruct 3D human pose and shape via model-fitting in the loop.</b> In Proceedings of the IEEE/CVF international conference on computer vision. 2252–2261. </br>
+            <br> [37] Yu Sun, Yun Ye, Wu Liu, Wenpeng Gao, Yili Fu, and Tao Mei. 2019. <b>Human mesh recovery from monocular images via a skeleton-disentangled representation.</b> In Proceedings of the IEEE/CVF international conference on computer vision. 5349–5358.</br> 
+            <br> [39] Ziniu Wan, Zhengjia Li, Maoqing Tian, Jianbo Liu, Shuai Yi, and Hongsheng Li. 2021. <b>Encoder-decoder with multi-level attention for 3D human shape and pose estimation.</b> In Proceedings of the IEEE/CVF International Conference on Computer Vision. 13033–13042.</br>
+            <br> [40] Wen-Li Wei, Jen-Chun Lin, Tyng-Luh Liu, and Hong-Yuan Mark Liao. 2022. <b>Capturing humans in motion: temporal-attentive 3D human pose and shape estimation from monocular video.</b> In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 13211–13220.</br>
 		</td>
 	    </tr>
 	</table>
 	<br>
         <br>
-        <hr>
+        <!-- <hr> -->
         <!--<a name="related_work"></a>-->
- 	<table align=center width=1100px>
+ 	<!-- <table align=center width=1100px>
  	    <tr>
-		<td width=400px>
+		<td width=400px> -->
  			<!--<left>-->
-  		  	<center>
+  		  	<!-- <center>
 				<h1>Contact Information</h1>
 				Wen-Li Wei, Jen-Chun Lin {lilijinjin@gmail.com; jenchunlin@gmail.com}
 			</center>
 		</td>
 	    </tr>
-	</table>
+	</table> -->
 	<br>
         <br>
         <hr>
-	<table align=center width=1100px>
+	<!-- <table align=center width=1100px>
  	    <tr>
-		<td width=400px>
+		<td width=400px> -->
  			<!--<left>-->
-  		  	<center>
+  		  	<!-- <center>
 				<h1>Acknowledgements</h1>
 				This webpage template was refered from Phillip Isola and Richard Zhang. Thanks a lot.
 			</center>
 		</td>
 	    </tr>
-	</table>
+	</table> -->
     </body>
 </html>
