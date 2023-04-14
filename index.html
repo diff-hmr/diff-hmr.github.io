@@ -40,6 +40,29 @@
         top:0;
  
     }
+    .box_two{
+        width:900px;
+        margin:0 auto;
+        position:relative;
+    }
+    .box_two .left{
+        width:450px;
+        /* height:300px; */
+        /* background-color:#eee; */
+        position:absolute;
+       
+    }
+
+    .box_two .right{
+        width:450px;
+        /* height:300px; */
+        /* background-color:#eee; */
+        position:absolute;
+        right:0;
+        top:0;
+ 
+    }
+
 
     h1 {
         font-weight:300;
@@ -186,7 +209,7 @@
     </div> 
     </br>
     <hr>   
-    <center><h1>Visual comparison of Diff-HMR with other sota methods </h1></center>
+    <center><h1>Visual comparison of Diff-HMR with other state-of-the-art methods </h1></center>
     
     <!-- demo comparison-->
     <div class="box">
@@ -282,6 +305,59 @@
         </span>
  	</center>
 </br>
+<hr>
+<table align=center width=900px>
+            <center><h1>Demo Videos (MPS-Net)</h1></center>
+            <tr>
+	        <center>
+                    <a href="./mp4_compare.mp4">
+                        <video width="900" controls preload>
+                            <source src="./mp4_compare.mp4" type="video/mp4">
+                        </video>
+                    </a><br>	
+		    <span style="font-size:16px"> Original video frame rate: 24.72fps </span>
+                </center>		
+		<br>
+                <center>
+                    <a href="./demo_compare.mp4">
+                        <video width="900" controls preload>
+                            <source src="./demo_compare.mp4" type="video/mp4">
+                        </video>
+                    </a><br>
+		    <span style="font-size:16px"> Original video frame rate: 29.97fps </span>
+                </center>
+		<br>
+                <center>
+                    <a href="./mp3_compare.mp4">
+                        <video width="900" controls preload>
+                            <source src="./mp3_compare.mp4" type="video/mp4">
+                        </video>
+                    </a><br>
+		    <span style="font-size:16px"> Original video frame rate: 24.72fps </span>
+                </center> 
+		<br>
+		<center>
+                    <a href="./visual2_compare.mp4">
+                        <video width="500" controls preload>
+                            <source src="./visual2_compare.mp4" type="video/mp4">
+                        </video>
+                    </a><br>
+		    <span style="font-size:16px"> Original video frame rate: 24.79fps </span>
+                </center>
+
+        <br>
+		<center>
+                    <a href="./visual1_compare.mp4">
+                        <video width="500" controls preload>
+                            <source src="./visual1_compare.mp4" type="video/mp4">
+                        </video>
+                    </a><br>
+		    <span style="font-size:16px"> Original video frame rate: 24.68fps </span>
+                </center>
+	    </tr>
+    </table>
+    
+    <br>
     <hr> 
         <table align=center width=900px>
             <center><h1>Visual effects of Diff-HMR in alternative viewpoints</h1></center>
@@ -297,7 +373,10 @@
 		        <span style="font-size:14px">   <b>We visualize the 3D human body estimated by our MPS-Net from different viewpoints.</b> The results show that our MPS-Net is able to estimate the correct global body rotation. </span>
                     </center> -->
             </tr>
-        </table>   
+        </table>  
+        
+        
+    
 	<br>
         <hr>
         <center><h1>Qualitative Results</h1></center>
@@ -370,6 +449,7 @@
                 </td>
 	    </tr>                
         </table>
+        
         <br>
         <hr>
         <br>
