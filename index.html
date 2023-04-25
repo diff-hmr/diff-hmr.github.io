@@ -201,8 +201,7 @@
                 <td width=600px>
                     <br>
                     <p align="justify" style="font-size: 18px">
-                        The accurate recovery of 3D human shape and pose from monocular videos is crucial for understanding human behavior in various media. However, current methods have yet to address the uncertainties associated with 3D estimation, such as inherent ambiguity, blurring, and occlusion, resulting in inaccurate estimates, particularly in complex scenarios.  To overcome this challenge, we propose a novel Diffusion-based Human Mesh Recovery (Diff-HMR) network, inspired by the powerful capabilities of the diffusion model in generation tasks. Specifically, our approach incorporates a Diffusion-based pose regressor (DPR) that models the estimation of a deterministic pose as a reverse diffusion process, while a Cross-Temporal Attention Module (CTAM) aggregates contextual features as a condition for the reverse diffusion process. The ground truth pose parameters are used to supervise process values through a stepwise diffusion. Additionally, we introduce a vertex constraint loss to provide more precise constraints on the final output of the human mesh. Experimental results demonstrate that our proposed Diff-HMR outperforms state-of-the-art methods on two benchmark datasets, 3DPW and Human3.6M, and provides better handling of uncertainty in human pose and shape estimation.    
-                    </td>
+                        The accurate recovery of 3D human shape and pose from monocular videos is crucial for understanding human behavior in various media. However, current methods have yet to address the uncertainties inherent in 3D estimation, such as deep ambiguity, blurring, and occlusion, resulting in inaccurate estimates particularly in complex scenarios. To overcome this challenge, we propose a novel Diffusion-based Human Mesh Recovery (Diff-HMR) network. Specifically, our approach incorporates a Diffusion-based Pose Regressor (DPR), which models the estimation of a deterministic pose as a reverse diffusion process. This allows for the stepwise mitigation of uncertainty through denoising. In addition, our Cross-Temporal Attention Module (CTAM) aggregates contextual features as a condition for the reverse diffusion process, guiding the diffusion model for accurate recovery. Experimental results demonstrate that Diff-HMR outperforms state-of-the-art video-based methods on two benchmarks, 3DPW [37] and Human3.6M [16].                    </td>
 	    </tr>
 	
     </br>
@@ -251,8 +250,8 @@
     
     </br>
     <center>
-    <span style="font-size:14px">  Given a challenging video which contains fast motion, self occlusion and blurring, Diff-HMR(middle) predicts more accurate result
-        than TCMR [4] (right) and MPS-Net [40] (left). In addition, it provides more accurate prediction of the people’s orientation.
+    <span style="font-size:14px">  
+        Given a challenging video which contains fast motion,  self occlusion and blurring, Diff-HMR(middle) predicts more accurate result than TCMR [4] (right) and MPS-Net [40] (left), particularly in cases of ambiguity and when estimating figure orientation.
      </span>
     </center>
     
@@ -300,8 +299,8 @@
     </tr>
         <center>
 	    <span style="font-size:14px">   
-            Qualitative comparison between Diff-HMR(middle), MPS-Net[40](left) and TCMR[4](right) on the challenging in-the-wild dataset 3DPW[38]. This video contains occlusion and fast motion. Diff-HMR produces better results
-            than the other two.    
+            Qualitative comparison between Diff-HMR(middle), MPS-Net [40] (left) and TCMR [4] (right) on the challenging in-the-wild dataset 3DPW[38]. For the video which contains occlusion and fast motion, Diff-HMR produces better results than the other two.
+          
         </span>
  	</center>
 </br>
