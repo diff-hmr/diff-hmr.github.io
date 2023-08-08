@@ -201,8 +201,10 @@
                 <td width=600px>
                     <br>
                     <p align="justify" style="font-size: 18px">
-                        The accurate recovery of 3D human shape and pose from monocular videos is crucial for understanding human behavior in various media. However, current methods have yet to address the uncertainties inherent in 3D estimation, such as deep ambiguity, blurring, and occlusion, resulting in inaccurate estimates particularly in complex scenarios. To overcome this challenge, we propose a novel Diffusion-based Human Mesh Recovery (Diff-HMR) network. Specifically, our approach incorporates a Diffusion-based Pose Regressor (DPR), which models the estimation of a deterministic pose as a reverse diffusion process. This allows for the stepwise mitigation of uncertainty through denoising. In addition, our Cross-Temporal Attention Module (CTAM) aggregates contextual features as a condition for the reverse diffusion process, guiding the diffusion model towards accurate recovery. Experimental results demonstrate that Diff-HMR outperforms state-of-the-art video-based methods on two benchmarks, 3DPW [37] and Human3.6M [16].                    </td>
-	    </tr>
+                        The accurate recovery of 3D human shape and pose from monocular videos is crucial for understanding human behavior in various media. However, current methods have yet to address the uncertainties inherent in 3D estimation, such as deep ambiguity, blurring, and occlusion, resulting in inaccurate estimates particularly in complex scenarios. To overcome this challenge, we propose a novel Diffusion-based Human Mesh Recovery (Diff-HMR) network. Specifically, our approach incorporates a Diffusion-based Pose Regressor (DPR), which models the estimation of a deterministic pose as a reverse diffusion process. This allows for the stepwise mitigation of uncertainty through denoising. In addition, our Cross-Temporal Attention Module (CTAM) aggregates contextual features as a condition for the reverse diffusion process, guiding the diffusion model towards accurate recovery. To impose more stringent constraints on the recovered vertex positions, we designed a vertex constraint loss that enhances the precision of the estimated human mesh.
+Experimental results demonstrate that Diff-HMR outperforms state-of-the-art video-based methods on two benchmarks, 3DPW and Human3.6M. 
+                        
+                    </tr>
 	
     </br>
     </div> 
