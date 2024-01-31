@@ -199,7 +199,7 @@
             	<tr>
 	        	<td>
                     		<center>                      
-		        		<img src = "./framework_update.png" width="1080px"></img>
+		        		<img src = "./framework_update_2.png" width="1080px"></img>
                         		<span style="font-size:15px;font-style:italic">    The overview of our proposed framework. </span>
                     		</center>
                 	</td> 
@@ -414,152 +414,11 @@ Experimental results demonstrate that Diff-HMR outperforms state-of-the-art vide
                      			Qualitative comparison of TCMR [6] (left) and our MPS-Net (right) on the challenging in-the-wild 3DPW [37] and MPI-INF-3DHP [27] datasets.
                     		</span>-->
                     	</center><br>
-		</tr>              
-	
-	</table>
-        <br>
-        <hr>
-        <center><h1> Quantitative Results</h1></center> 
-	<br>
-        <table align=center width=900px>
-            <tr>
-                <td>
-               <center>
-                    <span style="font-size:18px">
-                        <!--<b>Evaluation of state-of-the-art video-based methods on <a href='http://virtualhumans.mpi-inf.mpg.de/3DPW/'>3DPW</a>, <a href='http://vcai.mpi-inf.mpg.de/3dhp-dataset/'>MPI-INF-3DHP</a>, and <a href='http://vision.imar.ro/human3.6m/description.php'>Human3.6M</a> datasets.</b> Following Choi et al. [6], all methods are trained on the training set including 3DPW, but do not use the Human3.6M SMPL parameters obtained from <a href='https://files.is.tue.mpg.de/black/papers/MoSh.pdf'>Mosh</a>. The number of input frames follows the original protocol of each method.-->
-                        <b>Table 1. Evaluation of state-of-the-art methods on 3DPW [37] and Human3.6M [16] datasets.</b> 
-			<!--<b>Chest X-ray Lung Segmentation</b> Numbers are DICE scores. 
-                        <a href='http://db.jsrt.or.jp/eng.php'>JSRT</a> is the in-domain dataset, 
-                        on which we both train and evaluate. We also evaluate on additional out-of-domain datasets 
-                        (<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/'>NLM</a>, 
-                        <a href='https://arxiv.org/abs/1803.01199'>NIH</a>, 
-                        <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/'>SZ</a>). 
-                        Ours as well as the other semi-supervised methods use additional 108k unlabeled data samples.-->
-                    </span>
-                </center>
-                </td>                
-            </tr>
-            <tr>
-                <td width=100px>
-                    <center>
-                        <a href="./result_1.png"><img src = "./result_1.png" width="1000px"></img></a><br>
-                    </center>
-                </td>
-	    </tr>                
-        </table>
-        <br>
-        <table align=center width=900px>
-            <tr>
-                <td>
-		  <center>
-                    <span style="font-size:18px">
-                        <!--<b>Comparison of the number of network parameters</b>-->
-			<b>Table 2. Comparison of the number of network parameters, FLOPs, and model size.</b>
-                    </span>
-		  </center>
-                </td>                
-            </tr>
-            <tr>
-                <td width=300px>
-                    <center>
-                        <a href="./result_2.png"><img src = "./result_2.png" width="500px"></img></a><br>
-                    </center>
-                </td>
-	    </tr>                
-        </table>
+		</tr>       
         
-        <br>
-        <hr>
-        <br>
-        <table align=center width=900px>
-            <tr>
-                <td>
-                <center>
-                    <span style="font-size:18px">
-                        <!--<b>Ablation study for different modules of the proposed MPS-Net on the 3DPW [37] dataset.</b> The training and evaluation settings are the same as he above table.-->
-                        <b>Table 3. Ablation study on the impact of DPR on the 3DPW [37] dataset.</b>
-                        <!--<b>CT-MRI Transfer Liver Segmentation</b> Numbers are DICE per patient. CT
-                        is the in-domain data set on which we both train and evaluate. We also evaluate on additional unseen 
-                        MRI T1-in and MRI T1-out from
-                        <a href='https://chaos.grand-challenge.org/'>CHAOS</a> dataset. 
-                        Ours as well as the semi-supervised methods use additional 70 CT volumes from the 
-                        <a href='https://competitions.codalab.org/competitions/17094'>LITS2017</a> testing set as unlabeled data samples for training.-->
-                    </span>
-                </center>
-                </td>                
-            </tr>
-            <tr>
-                <td width=100px>
-                    <center>
-                        <a href="./result_3.png"><img src = "./result_3.png" width="600px"></img></a><br>
-                    </center>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <hr>
-        <br>
-        <table align=center width=900px>
-            <tr>
-                <td>
-                    <center>
-                    <span style="font-size:18px">
-                        <!--<b>Evaluation of state-of-the-art single image-based and video-based methods on 3DPW [37] dataset.</b> All methods do not use 3DPW in training.-->
-			<b>Table 5. Ablation study on the impact of attention module on the performance on the 3DPW [37] dataset.</b>
-                    </span>
-                </center>
-                </td>                
-            </tr>
-            <tr>
-                <td width=100px>
-                    <center>
-                        <a href="./result_4.png"><img src = "./result_4.png" width="600px"></img></a><br>
-                    </center>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        <hr>
-        <table align=center width=900px>
-            <tr>
-                <td>
-                    <center>
-                    <span style="font-size:18px">
-                        <!--<b>Evaluation of state-of-the-art single image-based and video-based methods on 3DPW [37] dataset.</b> All methods do not use 3DPW in training.-->
-			<b>Table 6. Ablation study on the impact of the loss on the performance on the 3DPW [37] dataset.</b> 
-                    </span>
-                </center>
-                </td>                
-            </tr>
-            <tr>
-                <td width=100px>
-                    <center>
-                        <a href="./result_5.png"><img src = "./result_5.png" width="600px"></img></a><br>
-                    </center>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        <hr>
- 	<a name="related_work"></a>
- 	<table align=center width=1100px>
- 	    <tr>
-		<td width=400px>
- 			<left>
-  		  	<center><h1>References</h1></center>
- 		 	<br> [4] Hongsuk Choi, Gyeongsik Moon, Ju Yong Chang, and Kyoung Mu Lee. 2021. <b>Beyond static features for temporally consistent 3d human pose and shape from a video.</b> In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 1964–1973.</br> 
-            <br> [15] Angjoo Kanazawa, Michael J Black, David W Jacobs, and Jitendra Malik. 2018. <b> End-to-end recovery of human shape and pose.</b> In Proceedings of the IEEE conference on computer vision and pattern recognition. 7122–7131.</br>
-            <br> [11] Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. <b>Denoising diffusion probabilistic models.</b> Advances in Neural Information Processing Systems 33 (2020), 6840–6851. </br>
-            <br> [16] Angjoo Kanazawa, Jason Y Zhang, Panna Felsen, and Jitendra Malik. 2019. <b>Learning 3d human dynamics from video.</b> In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 5614–5623.</br> 
-            <br> [21] Nikos Kolotouros, Georgios Pavlakos, Michael J Black, and Kostas Daniilidis. 2019. <b>Learning to reconstruct 3D human pose and shape via model-fitting in the loop.</b> In Proceedings of the IEEE/CVF international conference on computer vision. 2252–2261. </br>
-            <br> [37] Yu Sun, Yun Ye, Wu Liu, Wenpeng Gao, Yili Fu, and Tao Mei. 2019. <b>Human mesh recovery from monocular images via a skeleton-disentangled representation.</b> In Proceedings of the IEEE/CVF international conference on computer vision. 5349–5358.</br> 
-            <br> [39] Ziniu Wan, Zhengjia Li, Maoqing Tian, Jianbo Liu, Shuai Yi, and Hongsheng Li. 2021. <b>Encoder-decoder with multi-level attention for 3D human shape and pose estimation.</b> In Proceedings of the IEEE/CVF International Conference on Computer Vision. 13033–13042.</br>
-            <br> [40] Wen-Li Wei, Jen-Chun Lin, Tyng-Luh Liu, and Hong-Yuan Mark Liao. 2022. <b>Capturing humans in motion: temporal-attentive 3D human pose and shape estimation from monocular video.</b> In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 13211–13220.</br>
-		</td>
-	    </tr>
-	</table>
+        <hr>   
+	
+	
 	<br>
         <br>
         <!-- <hr> -->
